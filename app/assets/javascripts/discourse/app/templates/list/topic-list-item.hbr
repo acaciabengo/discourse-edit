@@ -77,5 +77,9 @@
   {{raw-plugin-outlet name="topic-list-before-view-count"}}
   {{number topic.views numberKey="views_long"}}
 </td>
-
+{{#if showPostTextCount}}
+  <td class="num reply-count">
+    {{number topic.reply_word_count}}
+  </td>
+{{/if}}
 {{raw "list/activity-column" topic=topic class="num topic-list-data" tagName="td"}}

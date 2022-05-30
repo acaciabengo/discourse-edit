@@ -3587,6 +3587,8 @@ en:
       other: "this topic has been viewed %{count} times"
     activity: "Activity"
     sr_activity: "Sort by activity"
+    word_count: "Word Count"
+    sr_word_count: "Sort by word count"
     likes: "Likes"
     sr_likes: "Sort by likes"
     sr_op_likes: "Sort by original post likes"

@@ -14,7 +14,9 @@ class TopicListItemSerializer < ListableTopicSerializer
              :liked_post_numbers,
              :featured_link,
              :featured_link_root_domain,
-             :allowed_user_count
+             :allowed_user_count,
+             :word_count,
+             :reply_word_count
 
   has_many :posters, serializer: TopicPosterSerializer, embed: :objects
   has_many :participants, serializer: TopicPosterSerializer, embed: :objects

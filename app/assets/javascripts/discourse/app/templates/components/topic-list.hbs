@@ -13,6 +13,7 @@
       listTitle=listTitle
       bulkSelectEnabled=bulkSelectEnabled
       canDoBulkActions=canDoBulkActions
+      showPostTextCount=true
     }}
   </thead>
 {{/unless}}
@@ -44,7 +45,8 @@
                       lastChecked=lastChecked
                       tagsForUser=tagsForUser
                       focusLastVisitedTopic=focusLastVisitedTopic
-                      index=index}}
+                      index=index
+                      showPostTextCount=true}}
     {{raw "list/visited-line" lastVisitedTopic=lastVisitedTopic topic=topic}}
     {{plugin-outlet
       name="after-topic-list-item"

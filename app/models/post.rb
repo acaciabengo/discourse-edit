@@ -66,6 +66,8 @@ class Post < ActiveRecord::Base
 
   after_commit :index_search
 
+  after_create :update_word_count
+
   # We can pass several creating options to a post via attributes
   attr_accessor :image_sizes, :quoted_post_numbers, :no_bump, :invalidate_oneboxes, :cooking_options, :skip_unique_check, :skip_validation
 
@@ -1147,6 +1149,15 @@ class Post < ActiveRecord::Base
       end
     end
   end
+
+  def update_word_count
+    topic_owner = self.topic.user_id
+    if topic_owner != self.user_id
+      topic.reply_word_count = self.word_count
+      topic.save!
+    end
+  end
+
 end
 
 # == Schema Information
