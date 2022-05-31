@@ -3051,4 +3051,33 @@ describe Topic do
       expect(topic.reload.cannot_permanently_delete_reason(Fabricate(:admin))).to eq(nil)
     end
   end
+  
+  #Add tests for the reply word counter for topic
+  describe "Reply word count incremented with the new posts" do
+    it 'increases with a new post' do
+      #create two users one for the topic and second for posts
+      raw =  'This is a sample post with semi-long raw content. The raw content is also more than
+      two hundred characters to satisfy any test conditions that require content longer
+      than the typical test post raw content. It really is some long content, folks.'
+      user1 = Fabricate(:user)
+      user2 = Fabricate(:user)
+      topic = Fabricate(:topic, user: user1)
+      post1 = Fabricate(:post, topic: topic, raw: raw, user: user2, post_number: 1)
+      post2 = Fabricate(:post, topic: topic, raw: raw ,user: user2, post_number: 2)
+      expect(topic.reply_word_count).to eq(86)
+    end
+
+    it 'does not increase reply work count if reply is from topic creator' do
+      #create two users one for the topic and second for posts
+      raw =  'This is a sample post with semi-long raw content. The raw content is also more than
+      two hundred characters to satisfy any test conditions that require content longer
+      than the typical test post raw content. It really is some long content, folks.'
+      user1 = Fabricate(:user)
+      user2 = Fabricate(:user)
+      topic = Fabricate(:topic, user: user1)
+      post1 = Fabricate(:post, topic: topic, raw: raw, user: user1, post_number: 1)
+      post2 = Fabricate(:post, topic: topic, raw: raw ,user: user1, post_number: 2)
+      expect(topic.reply_word_count).to eq(0)
+    end
+  end
 end

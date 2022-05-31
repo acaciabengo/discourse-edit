@@ -183,6 +183,8 @@ group :development do
   gem 'better_errors', platform: :mri, require: !!ENV['BETTER_ERRORS']
   gem 'binding_of_caller'
   gem 'yaml-lint'
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.3", require: false
 end
 
 if ENV["ALLOW_DEV_POPULATE"] == "1"
