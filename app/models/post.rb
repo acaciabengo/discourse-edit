@@ -1153,7 +1153,7 @@ class Post < ActiveRecord::Base
   def update_word_count
     topic_owner = self.topic.user_id
     if topic_owner != self.user_id
-      topic.reply_word_count = self.word_count
+      topic.reply_word_count += self.word_count
       topic.save!
     end
   end

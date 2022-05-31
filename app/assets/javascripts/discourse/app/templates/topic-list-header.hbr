@@ -19,7 +19,7 @@
 {{/if}}
 {{raw "topic-list-header-column" sortable=sortable number='true' order='views' name='views' ariaLabel=(i18n "sr_views")}}
 {{#if showPostTextCount}}
-  {{raw "topic-list-header-column" sortable=sortable number='true' order='word_count' name='word_count' ariaLabel=(i18n "sr_word_count")}}  
+  {{raw "topic-list-header-column" sortable=sortable number='true' order='reply_word_count' name='reply_word_count' ariaLabel=(i18n "sr_reply_word_count")}}  
 {{/if}}
 {{raw "topic-list-header-column" sortable=sortable number='true' order='activity' name='activity' ariaLabel=(i18n "sr_activity")}}
 {{~raw-plugin-outlet name="topic-list-header-after"~}}
