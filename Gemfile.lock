@@ -120,7 +120,7 @@ GEM
     debug_inspector (1.1.0)
     diff-lcs (1.5.0)
     diffy (3.4.0)
-    digest (3.1.0)
+    digest (3.0.0)
     discourse-ember-rails (0.18.6)
       active_model_serializers
       ember-data-source (>= 1.0.0.beta.5)
@@ -275,7 +275,7 @@ GEM
       timeout
     net-scp (3.0.0)
       net-ssh (>= 2.6.5, < 7.0.0)
-    net-smtp (0.3.1)
+    net-smtp (0.2.2)
       digest
       net-protocol
       timeout
@@ -299,7 +299,7 @@ GEM
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
-    oj (3.13.13)
+    oj (3.13.23)
     omniauth (1.9.1)
       hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
@@ -556,6 +556,7 @@ DEPENDENCIES
   cppjieba_rb
   css_parser
   diffy
+  digest (= 3.0.0)
   discourse-ember-rails (= 0.18.6)
   discourse-ember-source (~> 3.12.2)
   discourse-fonts
@@ -599,6 +600,9 @@ DEPENDENCIES
   multi_json
   mustache
   net-http
+  net-imap (~> 0.2.1)
+  net-pop (~> 0.1.1)
+  net-smtp (~> 0.2.1)
   nokogiri
   oj
   omniauth
